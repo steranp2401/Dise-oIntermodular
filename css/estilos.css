@@ -24,7 +24,7 @@ body {
 /*Botones Top bar (Login, Registro y cerrar sesions)*/
 .top-bar {
   /* Rojo oscuro */
-  background-color: #660000;
+  background-color: #4c0ddf;
   padding: 10px 0;
   color: white;
    /* Botones alineados a la derecha */
@@ -78,7 +78,7 @@ body {
 
 /*Header*/
 .header {
-  background-color: #660000;
+  background-color: #0f5fa6;
   padding: 20px 0;
   color: white;
 }
@@ -118,7 +118,7 @@ cambie de tamaño*/
 
 .nav a:hover {
   /* Hover en verde */
-  background-color: #239a05;
+  background-color: #112bac;
 }
 
 
@@ -128,7 +128,7 @@ cambie de tamaño*/
   /* Aparece debajo del menú principal */
   top: 100%;
   left: 0;
-  background-color: #660000;
+  background-color: #0631a5;
   display: none;
   flex-direction: column;
   min-width: 200px;
@@ -212,7 +212,7 @@ cambie de tamaño*/
 
 /*Footer*/
 footer {
-  background-color: #660000;
+  background-color: #084485;
   color: white;
   display: flex;
   flex-wrap: wrap;
