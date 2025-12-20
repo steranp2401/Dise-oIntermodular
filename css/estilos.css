@@ -5,18 +5,17 @@
   box-sizing: border-box;
 }
 
-/* ===== ESTRUCTURA PARA FOOTER ABAJO ===== */
 html, body {
   height: 100%;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
   font-family: 'Segoe UI', Tahoma, sans-serif;
+  display: block; /* NO flex */
+  min-height: 100vh;
 }
 
-/* ===== HEADER / NAV ===== */
+/* ===== HEADER ===== */
 .header {
   background-color: #0f5fa6;
   padding: 15px 40px;
@@ -27,12 +26,10 @@ body {
   align-items: center;
 }
 
-/* LOGO */
 .logo img {
   height: 80px;
 }
 
-/* MENÚ CENTRADO */
 .nav-center {
   display: flex;
   list-style: none;
@@ -40,14 +37,12 @@ body {
   margin: 0 auto;
 }
 
-/* BOTONES DERECHA */
 .nav-right {
   display: flex;
   list-style: none;
   gap: 15px;
 }
 
-/* Enlaces */
 .nav a {
   color: white;
   text-decoration: none;
@@ -61,23 +56,17 @@ body {
   border-radius: 6px;
 }
 
-/* Botones */
 .btn {
   padding: 10px 18px;
   background-color: #05149a;
   color: white;
   border: none;
   border-radius: 6px;
-  font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
 }
 
-.btn:hover {
-  background-color: #05149a;
-}
-
-/* ===== SUBMENÚS ===== */
+/* ===== SUBMENÚ ===== */
 .dropdown {
   position: relative;
 }
@@ -88,32 +77,96 @@ body {
   left: 0;
   background-color: #0631a5;
   list-style: none;
-  min-width: 180px;
   display: none;
   flex-direction: column;
   border-radius: 6px;
-  overflow: hidden;
-}
-
-.submenu li a {
-  padding: 12px;
-  font-size: 1rem;
 }
 
 .dropdown:hover .submenu {
   display: flex;
 }
 
-/* ===== MAIN ===== */
+/* ===== MAIN CON FONDO ===== */
 .contenido {
-  flex: 1;
+  position: relative;
+  min-height: calc(100vh - 80px - 60px); /* altura total - header - footer */
+  background-image: url("../img/WhatsApp Image 2025-12-20 at 18.59.13.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Contenido encima */
+.contenido-wrapper {
+  position: relative;
+  z-index: 1;
   padding: 40px;
 }
 
-/* ===== FOOTER ABAJO ===== */
+/* ===== IMÁGENES CIRCULARES ===== */
+.imagenes-circulares {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.circulo-item {
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.circulo-item:hover {
+  transform: scale(1.1);
+}
+
+.circulo-item img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #0f5fa6;
+}
+
+.circulo-item p {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #0f5fa6;
+}
+
+/* ===== FOOTER ===== */
 .footer {
   background-color: #084485;
   color: white;
   text-align: center;
   padding: 20px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+  }
+
+  .nav-center {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-right {
+    margin-top: 15px;
+    flex-direction: column;
+  }
+
+  .contenido {
+    min-height: calc(100vh - 120px); /* header + footer más grandes en móvil */
+    background-position: top center;
+  }
+
+  .circulo-item img {
+    width: 100px;
+    height: 100px;
+  }
 }
