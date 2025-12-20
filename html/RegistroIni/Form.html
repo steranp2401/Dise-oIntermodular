@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro / Inicio - Pet Point</title>
+  <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+  <!-- HEADER IGUAL QUE INDEX -->
+  <header class="header">
+    <nav class="nav">
+      <a href="../index.php" class="logo">
+        <img src="../img/logo Pet Point.png" alt="Pet Point">
+      </a>
+      <ul class="nav-center">
+        <li class="dropdown">
+          <a href="#">Sobre Nosotros</a>
+          <ul class="submenu">
+            <li><a href="./SobreNosotros/Galeria.html">Galería</a></li>
+            <li><a href="./SobreNosotros/Contacto.html">Contacto</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Servicios</a>
+          <ul class="submenu">
+            <li><a href="#">Peluquería</a></li>
+            <li><a href="./TalleresEventos.html">Talleres / Eventos</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Tienda</a>
+          <ul class="submenu">
+            <li><a href="#">Alimentación</a></li>
+            <li><a href="#">Higiene</a></li>
+            <li><a href="#">Accesorios</a></li>
+            <li><a href="#">Farmacia</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav-right">
+        <li><button class="btn">Carrito</button></li>
+        <li><button class="btn">Registro / Inicio</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- SECCIÓN LOGIN -->
+  <main class="contenido" style="min-height:auto; padding-top:120px;">
+    <div class="contenido-wrapper">
+      <section class="login-section">
+        <h2 class="login-titulo">Registro / Inicio de Sesión</h2>
+        <div class="login-wrapper">
+          <form class="login-form">
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" name="usuario" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit" class="btn">Registrarse / Iniciar Sesión</button>
+          </form>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Pet Point. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>

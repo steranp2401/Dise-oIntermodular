@@ -331,3 +331,95 @@ html, body {
     grid-template-columns: 1fr;
   }
 }
+/* ===== EVENTOS / TALLERES ===== */
+.eventos-section {
+  margin: 60px 20px;
+  padding: 30px;
+  background: rgba(75,46,138,0.25);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  color: white;
+}
+
+.eventos-titulo {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ffcc66;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.eventos-subtitulo {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.eventos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.evento-card {
+  background: #112bac;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.evento-card:hover {
+  transform: translateY(-8px);
+}
+
+.evento-titulo {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #ffcc66;
+}
+
+.evento-descripcion {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.evento-fecha {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* ===== LOGIN / REGISTRO ===== */
+.login-section {
+  margin: 60px 20px;
+  padding: 30px;
+  background: rgba(75,46,138,0.25);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  color: white;
+}
+
+.login-titulo {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #b794ff;
+  text-align: center;
+}
+
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.login-form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
