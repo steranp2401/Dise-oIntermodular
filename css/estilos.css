@@ -3,18 +3,25 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all 0.3s ease;
 }
 
 html, body {
   height: 100%;
   font-family: 'Segoe UI', Tahoma, sans-serif;
+  scroll-behavior: smooth;
 }
 
-/* ===== HEADER ===== */
+/* ===== HEADER FIJO ===== */
 .header {
-  background-color: #0f5fa6;
+  background: linear-gradient(90deg, #175993, #4b2e8a);
   padding: 15px 40px;
-  z-index: 10;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .nav {
@@ -40,26 +47,37 @@ html, body {
 }
 
 .nav a {
-  color: white;
+  color: rgb(255, 255, 255);
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: bold;
   padding: 10px;
+  border-radius: 6px;
 }
 
 .nav a:hover {
   background-color: #112bac;
-  border-radius: 6px;
 }
 
-.btn {
-  padding: 10px 18px;
-  background-color: #05149a;
-  color: white;
-  border: none;
-  border-radius: 6px;
+/* ===== BOTONES MÁS VISIBLES (MORADO) ===== */
+.btn, .oferta-boton {
+  background: linear-gradient(135deg, #7b4bff, #4b2e8a);
+  color: #e0e0ff;
   font-weight: bold;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  border: 2px solid #4b2e8a;
   cursor: pointer;
+}
+
+.btn:hover, .oferta-boton:hover {
+  background: linear-gradient(135deg, #8c5fff, #5c3ab5);
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
 /* ===== SUBMENÚ ===== */
@@ -71,33 +89,42 @@ html, body {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #0631a5;
+  background-color: #4b2e8a;
   list-style: none;
   display: none;
   flex-direction: column;
   border-radius: 6px;
+  min-width: 200px;
+}
+
+.submenu li a {
+  padding: 10px 20px;
+  display: block;
+  color: white;
 }
 
 .dropdown:hover .submenu {
   display: flex;
 }
 
-/* ===== MAIN CON FONDO ===== */
+/* ===== MAIN CON FONDO 16:9 - IMAGEN COMPLETA ===== */
 .contenido {
   position: relative;
   flex: 1 0 auto;
-  min-height: calc(150vh - 190px); /* ajusta según header + footer */
-  background-image: url("../img/WhatsApp Image 2025-12-20 at 18.59.13.jpeg");
-  background-size: cover;
-  background-position: center;
+  width: 100%;
+  min-height: calc(150vh - 120px);
+  background-color: #0a1a33; /* fondo oscuro suave detrás para evitar bordes */
+  background-image: url("../img/");
+  background-size: contain; /* asegura que la imagen completa se vea */
+  background-position: center center; /* centrado perfecto */
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   text-align: center;
+  padding-top: 120px; /* espacio para header */
 }
 
-/* Overlay semitransparente para destacar contenido */
 .contenido::before {
   content: "";
   position: absolute;
@@ -105,7 +132,7 @@ html, body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0,0,0,0.05); /* overlay mínimo para mejorar legibilidad */
   z-index: 0;
 }
 
@@ -113,6 +140,8 @@ html, body {
   position: relative;
   z-index: 1;
   padding: 40px;
+  width: 100%;
+  max-width: 1400px;
 }
 
 /* ===== IMÁGENES CIRCULARES ===== */
@@ -127,7 +156,6 @@ html, body {
 .circulo-item {
   text-align: center;
   text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .circulo-item:hover {
@@ -141,11 +169,10 @@ html, body {
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid #0f5fa6;
-  transition: transform 0.3s ease, border 0.3s ease;
 }
 
 .circulo-item img:hover {
-  border-color: #ffcc00;
+  border-color: #7b4bff;
   transform: scale(1.15);
 }
 
@@ -161,9 +188,112 @@ html, body {
   background-color: #084485;
   color: white;
   text-align: center;
-  margin-top: ;
   padding: 20px;
   flex-shrink: 0;
+}
+
+/* ===== SECCIÓN DE OFERTAS ===== */
+.ofertas-section {
+  margin-top: 80px;
+  padding: 40px 20px;
+  background: rgba(75, 46, 138, 0.3); /* más transparente para dejar ver fondo */
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  color: white;
+}
+
+.ofertas-titulo {
+  font-size: 2.5rem;
+  color: #b794ff;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.ofertas-subtitulo {
+  font-size: 1.2rem;
+  color: #e0e0ff;
+  margin-bottom: 40px;
+}
+
+.ofertas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.oferta-card {
+  background: #0f5fa6;
+  color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+.oferta-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.oferta-imagen {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, #0f5fa6 0%, #112bac 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  position: relative;
+}
+
+.oferta-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #7b4bff;
+  color: #e0e0ff;
+  padding: 8px 15px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.oferta-contenido {
+  padding: 20px;
+}
+
+.oferta-titulo {
+  font-size: 1.4rem;
+  color: #b794ff;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.oferta-descripcion {
+  color: #e0e0ff;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.oferta-precio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.precio-anterior {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 1.1rem;
+}
+
+.precio-actual {
+  color: #b794ff;
+  font-size: 1.6rem;
+  font-weight: bold;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -183,12 +313,21 @@ html, body {
   }
 
   .contenido {
-    min-height: calc(100vh - 140px); /* header + footer móviles */
-    background-position: top center;
+    min-height: calc(100vh - 140px);
+    background-position: center center;
+    padding-top: 140px;
   }
 
   .circulo-item img {
     width: 100px;
     height: 100px;
+  }
+
+  .ofertas-titulo {
+    font-size: 2rem;
+  }
+
+  .ofertas-grid {
+    grid-template-columns: 1fr;
   }
 }
