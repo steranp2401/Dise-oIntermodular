@@ -1,354 +1,119 @@
-/*Archivo CSS para el header y footer de todas las paginas de la web*/
-/*Reset*/
+/* ===== RESET ===== */
 * {
-  /* Elimina márgenes por defecto */
   margin: 0;
-  /* Elimina padding por defecto */
   padding: 0;
-  /* Asegura que el padding y borde no aumenten el tamaño total */
   box-sizing: border-box;
 }
 
-/*Body*/
+/* ===== ESTRUCTURA PARA FOOTER ABAJO ===== */
+html, body {
+  height: 100%;
+}
+
 body {
-  /* Fuente moderna y legible */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  /* Fondo blanco */
-  background-color: #fff;
-  /* Texto en gris oscuro */
-  color: #333;
-  /* Espaciado entre líneas para mejor lectura */
-  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
 }
 
-/*Botones Top bar (Login, Registro y cerrar sesions)*/
-.top-bar {
-  /* Rojo oscuro */
-  background-color: #4c0ddf;
-  padding: 10px 0;
-  color: white;
-   /* Botones alineados a la derecha */
-  text-align: right;
-
-}
-
-.top-bar .top-buttons a {
-  /* Verde */
-  background: #239a05;
-  color: white;
-  margin-left: 15px;
-  padding: 5px 10px;
-   /* Bordes redondeados */
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 0.9em;
-}
-
- /*Boton de cerrar sesion*/
-.cerrar-sesion {
-  padding: 10px 20px;
-  background-color: #239a05;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.cerrar-sesion:hover {
-  /* Verde más oscuro al hacer hover */
-  background-color: #2e5339;
-}
-
-
-/*Nombre de usuario tiene enlace que lleva a perfil*/
-
-.enlace-perfil {
-  color: white; 
-  text-decoration: underline;
-  cursor: pointer;
-  transition: color 0.2s ease;
-}
-
-.enlace-perfil:hover {
-  /* efecto hover */
-  color: #239a05; 
-}
-
-/*Header*/
+/* ===== HEADER / NAV ===== */
 .header {
   background-color: #0f5fa6;
-  padding: 20px 0;
-  color: white;
+  padding: 15px 40px;
 }
 
-.header .logo img {
-  vertical-align: middle;
-/*Para evitar que la imagen se deforme aunque el contenedor
-cambie de tamaño*/
-  object-fit: contain;
-}
-
-/* Navegación principal */
 .nav {
-  float: right;
-}
-
-.nav ul {
-  list-style: none;
   display: flex;
-  gap: 20px;
-  justify-content: flex-end;
   align-items: center;
 }
 
-.nav ul li {
-  /* Para posicionar submenús */
-  position: relative;
+/* LOGO */
+.logo img {
+  height: 80px;
 }
 
+/* MENÚ CENTRADO */
+.nav-center {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  margin: 0 auto;
+}
+
+/* BOTONES DERECHA */
+.nav-right {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+}
+
+/* Enlaces */
 .nav a {
-  text-decoration: none;
   color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
   font-weight: bold;
-  padding: 15px;
-  display: block;
+  padding: 10px;
 }
 
 .nav a:hover {
-  /* Hover en verde */
   background-color: #112bac;
+  border-radius: 6px;
 }
 
+/* Botones */
+.btn {
+  padding: 10px 18px;
+  background-color: #05149a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-/*Submenu */
+.btn:hover {
+  background-color: #05149a;
+}
+
+/* ===== SUBMENÚS ===== */
+.dropdown {
+  position: relative;
+}
+
 .submenu {
   position: absolute;
-  /* Aparece debajo del menú principal */
   top: 100%;
   left: 0;
   background-color: #0631a5;
+  list-style: none;
+  min-width: 180px;
   display: none;
   flex-direction: column;
-  min-width: 200px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 999;
-  opacity: 0;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  visibility: hidden;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
-/* Mostrar submenu al pasar el ratón */
+.submenu li a {
+  padding: 12px;
+  font-size: 1rem;
+}
+
 .dropdown:hover .submenu {
   display: flex;
-  opacity: 1;
-  visibility: visible;
 }
 
-.submenu li {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+/* ===== MAIN ===== */
+.contenido {
+  flex: 1;
+  padding: 40px;
 }
 
-
-/*Contenido para usuarios logueados o admin*/ 
-.solo-logueado, .solo-admin, .contenido-publicaciones {
-  display: none ;
-}
-
-/*Mensaje para los no logueados en publicaciones*/
-#mensaje-no-logueado {
-  text-align: center;
-  padding: 2rem;
-  background-color: #f9f9f9;
-  border-radius: 1rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  margin: 2rem auto;
-  max-width: 600px;
-}
-
-#mensaje-no-logueado h2 {
-  font-size: 1.5rem;
-  color: #333;
-  margin-bottom: 1rem;
-}
-
-#mensaje-no-logueado .tagline {
-  font-size: 1rem;
-  color: #666;
-  margin-bottom: 1.5rem;
-}
-
-/* Botones debajo del mensaje (Acceder / Registrarse) */
-.botones-acceso {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.boton-acceso,
-.boton-registro {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: #239a05;
-  color: white;
-  border-radius: 0.5rem;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-
-.boton-registro {
-  background-color: #239a05;
-}
-
-.boton-acceso:hover {
-  background-color: #2e5339;
-}
-
-.boton-registro:hover {
-  background-color: #2e5339;
-}
-
-
-/*Footer*/
-footer {
+/* ===== FOOTER ABAJO ===== */
+.footer {
   background-color: #084485;
   color: white;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 40px 10px;
-}
-
-.footer-section {
-  width: 22%;
-  margin-bottom: 20px;
-}
-
-.footer-section img {
-  max-width: 100%;
-}
-
-.footer-section h3 {
-  color: #ffffff;
-  margin-bottom: 10px;
-}
-
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-section ul li {
-  margin-bottom: 10px;
-}
-
-.footer-section ul li a {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.footer-section p {
-  margin: 5px 0;
-}
-
-/* Íconos sociales */
-.social-icons {
-  display: flex;
-  list-style: none;
-}
-
-.social-icons li {
-  margin-right: 10px;
-}
-
-.social-icons a {
-  color: white;
-  font-size: 1.5rem;
-}
-
-/*Botón para volver arriba*/
-.ir-arriba {
-  display: none;
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  z-index: 2;
-  cursor: pointer;
-  color: #239a05;
-  font-size: 20px;
-}
-
-/*Responsive (Para moviles)*/
-@media (max-width: 768px) {
-  .body {
-    width: 100%;
-    text-align: center;
-  }
-  
-  .header {
-    padding: 15px;
-    text-align: center;
-  }
-
-  .header .logo img {
-    width: 80%;
-    height: auto;
-  }
-
-  .nav {
-    float: none;
-    margin-top: 15px;
-    width: 100%;
-    justify-content: center;
-  }
-
-  .nav ul {
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-  }
-
-  .nav a {
-    padding: 10px;
-    font-size: 1rem;
-  }
-
-  .solo-logueado, .solo-admin {
-  display: none;
-  }
-
-/* Ajustes top bar en móvil */
-  .top-bar {
-    text-align: center;
-    padding: 8px;
-  }
-
-  .top-bar .top-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    align-items: center;
-  }
-
-  .top-bar .top-buttons a {
-    margin-left: 0;
-  }
-
-  /* Footer */
-  footer {
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    text-align: center;
-  }
-
-  .footer-section {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .social-icons {
-    justify-content: center;
-  }
+  text-align: center;
+  padding: 20px;
 }
