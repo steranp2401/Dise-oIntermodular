@@ -1,65 +1,99 @@
 <!DOCTYPE html>
 <html lang="es">
-
+    <!--HEAD-->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pet Point</title>
-    <link rel="stylesheet" href="../css/estilos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--TITULO DE LA PESTAÑA-->
+  <title>Contacto</title>
+  <link rel="stylesheet" href="/css/estilos.css">
 </head>
-
+<!--BODY-->
 <body>
-    <header class="header">
-        <nav class="nav">
-            <!-- LOGO IZQUIERDA -->
-            <a href="./index.php" class="logo">
-                <img src="./img/logo Pet Point.png" alt="Pet Point">
-            </a>
+  <!-- HEADER IGUAL QUE INDEX -->
+  <header class="header">
+    <nav class="nav">
+      <a href="../index.php" class="logo">
+        <img src="../../img/Logo Pet Point.png" alt="Pet Point">
+      </a>
+      <ul class="nav-center">
+        <li class="dropdown">
+          <a href="#">Sobre Nosotros</a>
+          <ul class="submenu">
+            <li><a href="../SobreNosotros/Galeria.html">Galería</a></li>
+            <li><a href="../SobreNosotros/Contacto.html">Contacto</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Servicios</a>
+          <ul class="submenu">
+            <li><a href="../Servicios/Peluqueria.html">Peluquería</a></li>
+            <li><a href="../Servicios/Talleres.html">Talleres / Eventos</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Tienda</a>
+          <ul class="submenu">
+            <li><a href="">Alimentación</a></li>
+            <li><a href="#">Higiene</a></li>
+            <li><a href="#">Accesorios</a></li>
+            <li><a href="#">Farmacia</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav-right">
+        <li><button class="btn">Carrito</button></li>
+        <li><button class="btn">Registro / Inicio</button></li>
+      </ul>
+    </nav>
+  </header>
 
-            <!-- MENÚ CENTRADO -->
-            <ul class="nav-center">
-                <li class="dropdown">
-                    <a href="#">Sobre Nosotros</a>
-                    <ul class="submenu">
-                        <li><a href="./html/SobreNosotros/Galeria.html">Galería</a></li>
-                        <li><a href="./html/SobreNosotros/Contacto.html">Contacto</a></li>
-                    </ul>
-                </li>
-
-                <li class="dropdown">
-                    <a href="#">Servicios</a>
-                    <ul class="submenu">
-                        <li><a href="#">Peluquería</a></li>
-                        <li><a href="#">Talleres / Eventos</a></li>
-                    </ul>
-                </li>
-
-                <li class="dropdown">
-                    <a href="#">Tienda</a>
-                    <ul class="submenu">
-                        <li><a href="#">Alimentación</a></li>
-                        <li><a href="#">Higiene</a></li>
-                        <li><a href="#">Accesorios</a></li>
-                        <li><a href="#">Farmacia</a></li>
-                    </ul>
-                </li>
-            </ul>
-
-            <!-- BOTONES DERECHA -->
-            <ul class="nav-right">
-                <li><button class="btn">Carrito</button></li>
-                <li><button class="btn">Registro / Inicio</button></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main class="contenido">
+  <!--MAIN-->
+  <!-- SECCIÓN CONTACTO -->
+  <main class="contenido" style="min-height:auto; padding-top:120px;">
+    <div class="contenido-wrapper">
+        <!--CLASS LOGIN-SECTION-->
+        <section class="login-section">
+            <h2 class="login-titulo">Contacto</h2>
+                <div class="contacto-container">
+                    <div class="contacto-col">
+                        <h3 class="contacto-subtitulo">Nuestros Datos</h3>
+                            <div class="info-item">
+                                <p><strong>Teléfono:</strong></p>
+                                <p>+34 604 19 48 86</p>
+                            </div>
+                            <!--CLASS INFO-ITEM-->
+                            <div class="info-item">
+                                <p><strong>Dirección:</strong></p>
+                                <p>Calle Falsa 123, Santander</p>
+                            </div>
+                            <div class="info-item">
+                                <p><strong>Email:</strong></p>
+                                <p>contacto@petpoint.com</p>
+                            </div>
+                            </div>
+                            <!--CLASS DIVISOR-VERTICAL-->
+                            <div class="divisor-vertical"></div>
+                            <div class="contacto-col">
+                                <h3 class="contacto-subtitulo">Escríbenos</h3>
+                                <form class="login-form">
+                                    <label for="email">Tu Email:</label>
+                                    <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
         
+                                    <label for="mensaje">Mensaje:</label>
+                                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="¿En qué podemos ayudarte?" required></textarea>
+        
+                                    <button type="submit" class="btn">Enviar Mensaje</button>
+                                </form>
+                            </div>
+    
+                </div>
+        </section>
+    </div>
     </main>
-
+<!--FOOTER-->
     <footer class="footer">
-        <p>© 2025 Pet Point. Todos los derechos reservados.</p>
+        <p>© 2025 Pet Point. Todos los derechos reservados.</p>    
     </footer>
-</body>
-
+  </body>
 </html>
