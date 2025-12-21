@@ -495,3 +495,91 @@ html, body {
     text-align: center;
   }
 }
+
+/* ===== GALERIA ===== */
+/* Estilo para las imágenes de la galería */
+.galeriaImg {
+  max-width: 100%;
+  max-height: 100%;
+   object-fit: contain; /* Recorta la imagen para que rellene el espacio sin estirarse */
+  display: block;    /* Elimina espacios extra en la base de la imagen */
+}
+
+/* Estilo para los videos de la galería */
+.galeriaVideo {
+    max-width: 100%;      /* No permite que el video se salga del ancho */
+    max-height: 100%;     /* No permite que el video se salga del alto */
+    width: auto;          /* Mantiene su proporción original */
+    height: auto;         /* Mantiene su proporción original */
+    object-fit: contain;  /* CLAVE: Muestra el video completo sin recortar */
+    display: block;
+}
+
+.galeria-imagen {
+    width: 100%;
+    height: 200px;         /* Mantén la altura fija para que todas las cards midan lo mismo */
+    background-color: #000; /* Fondo negro para rellenar los bordes si el video es más estrecho */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.galeria-section {
+    margin: 80px auto;
+    width: 95%;          /* Ocupa casi toda la pantalla */
+    max-width: 1800px;   /* Un límite muy alto solo para pantallas gigantes */
+    padding: 40px 20px;
+    background: rgba(75, 46, 138, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    color: white;
+}
+
+.galeria-grid {
+    display: grid;
+    /* Reducimos el mínimo a 200px para que quepan 3 o más en horizontal */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.galeria-card {
+    background: #0f5fa6;
+    color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column; /* Asegura que el contenido vaya hacia abajo */
+    height: 100%; /* Para que todas las tarjetas midan lo mismo en la misma fila */
+}
+
+.galeria-contenido {
+    padding: 15px;
+    text-align: center;
+}
+
+.galerias-titulo{
+  font-size: 2.5rem;
+  color: #b794ff;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.galeria-titulo {
+    font-size: 1.1rem; /* Título un poco más pequeño para que no rompa la fila */
+    margin-bottom: 8px;
+}
+
+.galeria-descripcion {
+    font-size: 0.9rem; /* Texto de descripción más compacto */
+    line-height: 1.3;
+}
+
+/* Esto hace que el título 'Videos' rompa la fila y empiece una nueva */
+.salto-linea {
+    grid-column: 1 / -1; /* Ocupa desde la primera columna hasta la última */
+    padding: 40px 0 20px 0;
+    text-align: center;
+}
