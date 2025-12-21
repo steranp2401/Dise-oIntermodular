@@ -1,11 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+<!--HEAD-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pet Point</title>
+    <link rel="stylesheet" href="../../css/estilos.css">
 </head>
+<!--BODY-->
 <body>
-    
+    <header class="header">
+        <nav class="nav">
+            <!-- LOGO IZQUIERDA -->
+            <a href="../../index.html" class="logo">
+                <img src="../../img/Logo Pet Point.png" alt="Pet Point">
+            </a>
+
+            <!-- MENÚ CENTRADO -->
+            <ul class="nav-center">
+                <li class="dropdown">
+                    <a href="#">Sobre Nosotros</a>
+                    <ul class="submenu">
+                        <li><a href="../SobreNosotros/Galeria.html">Galería</a></li>
+                        <li><a href="../SobreNosotros/Contacto.html">Contacto</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#">Servicios</a>
+                    <ul class="submenu">
+                        <li><a href="../Servicios/Peluqueria.html">Peluquería</a></li>
+                        <li><a href="../Servicios/Talleres.html">Talleres / Eventos</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#">Tienda</a>
+                    <ul class="submenu">
+                        <li><a href="../Tienda/Alimentacion.html">Alimentación</a></li>
+                        <li><a href="../Tienda/Higiene.html">Higiene</a></li>
+                        <li><a href="../Tienda/Accesorios.html">Accesorios</a></li>
+                        <li><a href="../Tienda/Farmacia.html">Farmacia</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- BOTONES DERECHA -->
+            <ul class="nav-right">
+                <li><button class="btn">Carrito</button></li>
+                <li><button class="btn">Registro / Inicio</button></li>
+            </ul>
+        </nav>
+    </header>
+<!--MAIN-->
+    <main class="contenido">
+        <!-- SECCIÓN DE LA GALERIA -->
+            <div class="ofertas-section">
+                <h2 class="ofertas-titulo">Galeria Pet Point</h2>
+                <p class="ofertas-subtitulo"></p>
+<!--Aprovechando class de ofertas para galeria-->
+                <div class="ofertas-grid">
+                    <!-- FOTO 1 -->
+                    <div class="oferta-card">
+                        <div class="oferta-imagen">
+                            <img src="" alt="">
+                        </div>
+                        <div class="oferta-contenido">
+                            <h3 class="oferta-titulo">Pack Alimentación Premium</h3>
+                            <p class="oferta-descripcion">Comida premium para perros de todas las edades. ¡Nutrición completa!</p>
+                        </div>
+                    </div>
+
+                    <!-- FOTO 2 -->
+                    <div class="oferta-card">
+                        <div class="oferta-imagen">
+                            <img src="" alt="">
+                        </div>
+                        <div class="oferta-contenido">
+                            <h3 class="oferta-titulo">Sesión de Peluquería</h3>
+                            <p class="oferta-descripcion">Baño completo, corte y cuidado profesional para tu mascota.</p>
+                        </div>
+                    </div>
+
+                    <!-- FOTO 3 -->
+                    <div class="oferta-card">
+                        <div class="oferta-imagen">
+                            <img src="" alt="">
+                        </div>
+                        <div class="oferta-contenido">
+                            <h3 class="oferta-titulo">Sesión de Peluquería</h3>
+                            <p class="oferta-descripcion">Baño completo, corte y cuidado profesional para tu mascota.</p>
+                        </div>
+                    </div>
+
+                    <!-- FOTO 4 -->
+                    <div class="oferta-card">
+                        <div class="oferta-imagen">
+                            <img src="" alt="">
+                        </div>
+                        <div class="oferta-contenido">
+                            <h3 class="oferta-titulo">Sesión de Peluquería</h3>
+                            <p class="oferta-descripcion">Baño completo, corte y cuidado profesional para tu mascota.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 Pet Point. Todos los derechos reservados.</p>
+    </footer>
 </body>
+
 </html>
